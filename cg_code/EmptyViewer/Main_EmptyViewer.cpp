@@ -53,7 +53,7 @@ void render()
 		glm::vec4 clip = mvp * v;
 		clip /= clip.w; // perspective divide
 		int sx = (int)((clip.x * 0.5f + 0.5f) * Width);
-		int sy = (int)((clip.y * 0.5f + 0.5f) * Height);
+		int sy = (int)((1.0f - (clip.y * 0.5f + 0.5f)) * Height);
 		float sz = clip.z;
 		screenVertices[i] = glm::vec4(sx, sy, sz, 1.0f);
 	}
@@ -122,7 +122,9 @@ void resize_callback(GLFWwindow*, int nw, int nh)
 
 	//Reserve memory for our render so that we don't do 
 	//excessive allocations and render the image
-	OutputImage.reserve(Width * Height * 3);
+	OutputImage.assign(Width * Height * 3, 0.5f);
+	DepthBuffer.assign(Width * Height, std::numeric_limits<float>::infinity());
+
 	render();
 }
 
