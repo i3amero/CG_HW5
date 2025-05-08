@@ -48,5 +48,6 @@ Outputting the CPU-calculated pixel data (OutputImage) to OpenGL as glDrawPixels
 Main_EmptyViewer.cpp → main() run, transform, rasterizer<br/>
 sphere_scene.cpp → sphere mesh generate<br/>
 <br/>
-![441592635-0c6ec7e9-ee1b-4e0b-839c-b913cdaaeaae](https://github.com/user-attachments/assets/f2fa9238-10d9-4228-ad0e-180a40d18f77)
+
+![Image](https://github.com/user-attachments/assets/e0e3ac71-d0c6-4f6e-9957-7d4430d68ef2)
 
